@@ -1,0 +1,22 @@
+<h1>Content</h1>	
+
+<form ng-submit="saveContentItem()">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" ng-model="contentItem.title" id="title" placeholder="Title of the content">
+  </div>
+  <div class="form-group">
+    <label for="text">Content</label>
+    <textarea class="form-control" id="text" rows="10" ng-model="contentItem.text" placeholder="Content body"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <select ng-model="contentItem.author">
+      <option ng-repeat="user in users" value="{{user.username}}" ng-selected="user.username == contentItem.author">{{user.username}}</option>
+    </select>
+  </div>
+  <a href="#/content" class="btn btn-default">Cancel</a>
+  <button type="submit" class="btn btn-success">Save</button>
+</form>    
+
+

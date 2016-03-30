@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="admin">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CMS Administration</title>
+	
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  
+  <div class="container">
+  
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#/">Dashboard</a></li>
+              <li><a href="#/content">Content</a></li>
+              <li><a href="#/users">Users</a></li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+  	   <ng-view></ng-view>                                              
+  		
+  </div>
+    		  		  		  		  		
+  <script src="../libs/angular/angular.min.js"></script>
+  <script src="../libs/angular-resource/angular-resource.min.js"></script>
+  <script src="../libs/angular-route/angular-route.min.js"></script>
+  <script src="../libs/jquery/dist/jquery.min.js"></script>
+  <script src="../libs/bootstrap/js/modal.js"></script>
+  <script src="./admin.module.js"></script>	
+  <script src="./dashboard/dashboard.controller.js"></script>
+  <script src="./dashboard/dashboard.service.js"></script>
+  <script src="./users/users.controller.js"></script>
+  <script src="./users/users.service.js"></script>
+  <script src="./content/content.controller.js"></script>
+  <script src="./content/contentItem.controller.js"></script>
+  <script src="./content/content.service.js"></script>
+</body>
+</html>

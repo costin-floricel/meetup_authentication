@@ -1,0 +1,43 @@
+<h1>Content administration</h1>
+  	
+  	<p><a href="#/content/item" class="btn btn-primary">Create content</a></p>
+  	
+    <table class="table table-bordered table-striped">
+    
+       <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th></th>
+        <th></th>
+        
+      </tr>
+
+      <tr ng-repeat="contentItem in content">
+        <td>{{ contentItem.title }}</td>
+        <td>{{ contentItem.author }}</td>
+        <td><a href="#/content/item/{{ contentItem._id }}" class="btn btn-success">Edit</a></td>
+        <td><button class="btn btn-danger" ng-click="deleteContentItem(contentItem._id)" data-toggle="modal" data-target="#modalConfirmDeleteContentItem">Delete</button></td>
+      </tr>
+
+    </table>
+       
+                 
+
+  <div class="modal fade" id="modalConfirmDeleteContentItem" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Do you want to delete the selected content?</h4>
+        </div>
+        <div class="modal-body">
+          <h5>Title</h5>
+          <p>{{ contentItem.title }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="performDeleteContentItem()">Delete</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal --> 
